@@ -1,23 +1,35 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import R2D2 from '../R2D2-icon.png'
 
 const Home = () => {
     let homeStyle = {
         background:'#03a9f4',
-        padding:20,
+        padding:30,
         boxSizing:'borderBox',
-        width:'95%',
-        height:400,
+        width:'85%',
         margin:'auto',
         boxShadow: '4px 5px 10px',
-        marginTop:20
+        marginTop:20,
+        borderRadius:7,
+        imgSmall:{
+            width:175,
+            height:175,
+        }
     }
     
     return(
         <div style={homeStyle}>
-            <h2 className="display-4">StarWars Info Site</h2>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            
+            <h2 className="display-4">StarWars Site</h2>
+            <p className="lead">
+            Welcome to my inofficial StarWars info website. this is a work in process which I use to practice and apply new web-dev skills. My goal is to update from time to time.See my <Link to={'/about'}>About</Link> page to know more;) 
             </p>
+            <img 
+                src={R2D2}
+                style={homeStyle.imgSmall} 
+                className="rounded-circle mx-auto d-block" alt="R2D2"
+                />
         </div>
     )
 }
