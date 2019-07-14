@@ -11,6 +11,7 @@ const Home = () => {
         margin:'auto',
         boxShadow: '4px 5px 10px',
         marginTop:20,
+        marginBottom:20,
         borderRadius:7,
         imgSmall:{
             width:175,
