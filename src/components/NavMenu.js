@@ -21,6 +21,9 @@ const NavMenu = () => {
                     <li className="nav-item">
                         <Link className="nav-link" exact to="/contact">Contact</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" exact to="/infolist">info</Link>
+                    </li>
                 </ul>
             </div>
         </nav>

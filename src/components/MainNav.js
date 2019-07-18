@@ -20,9 +20,10 @@ const MainNav = () => {
     return (
         <nav>
             <ul style={navCss}>
-                <li><Link style={linkCss} exact to="/">Home</Link></li>
+                <li><Link style={linkCss} exact to="/">home</Link></li>
                 <li><Link style={linkCss} to="/About">About</Link></li>
                 <li><Link style={linkCss} to="/Contact">Contact</Link></li>
+                <li><Link style={linkCss} to="/infolist">get info</Link></li>
             </ul>
         </nav>
     )
