@@ -15,19 +15,6 @@ class InfoList extends React.Component {
         }
     }
     
-    fetchPeople = (url) => {
-        
-        this.setState({
-            list:[]
-        })
-        fetch(`https://swapi.co/api/${url}/`)
-        .then(response => response.json())
-        .then(data => {
-            this.setState({
-                list: data.results
-            })    
-        })
-    }
     fetchStuff = (url) => {
         this.setState({
             list:[]
@@ -40,30 +27,7 @@ class InfoList extends React.Component {
             })    
         })
     }
-    fetchPlanets = (url) => {
-        this.setState({
-            list:[]
-        })
-        fetch(`https://swapi.co/api/${url}/`)
-        .then(response => response.json())
-        .then(data => {
-            this.setState({
-                list: data.results
-            })    
-        })
-    }
-    fetchStarships = (url) => {
-        this.setState({
-            list:[]
-        })
-        fetch(`https://swapi.co/api/${url}/`)
-        .then(response => response.json())
-        .then(data => {
-            this.setState({
-                list: data.results
-            })    
-        })
-    }
+    
     render() {
         let InfoListStyle = {
             background:'#03a9f4',
@@ -91,7 +55,7 @@ class InfoList extends React.Component {
             <div style={InfoListStyle}>
                 <PeopleBtn getPeople={() => {this.fetchStuff(people)}}/>
                 <PlanetsBtn getPlanets={() => {this.fetchStuff(planets)}}/>
-                <StarshipsBtn getStarships={() => {this.fetchStarships(starships)}}/>
+                <StarshipsBtn getStarships={() => {this.fetchStuff(starships)}}/>
                 {list}
             </div>
         )    
