@@ -4,8 +4,6 @@ import PeopleBtn from '../components/PeopleBtn'
 import PlanetsBtn from '../components/PlanetsBtn'
 import StarshipsBtn from '../components/StarshipsBtn'
 
-//const Data = ['foo',3,'bar','none',7]
-
 class InfoList extends React.Component {
     constructor(props) {
         super(props)
@@ -18,7 +16,22 @@ class InfoList extends React.Component {
     }
     
     fetchPeople = (url) => {
-        this.state.list = []
+        
+        this.setState({
+            list:[]
+        })
+        fetch(`https://swapi.co/api/${url}/`)
+        .then(response => response.json())
+        .then(data => {
+            this.setState({
+                list: data.results
+            })    
+        })
+    }
+    fetchStuff = (url) => {
+        this.setState({
+            list:[]
+        })
         fetch(`https://swapi.co/api/${url}/`)
         .then(response => response.json())
         .then(data => {
@@ -28,7 +41,9 @@ class InfoList extends React.Component {
         })
     }
     fetchPlanets = (url) => {
-        this.state.list = []
+        this.setState({
+            list:[]
+        })
         fetch(`https://swapi.co/api/${url}/`)
         .then(response => response.json())
         .then(data => {
@@ -38,7 +53,9 @@ class InfoList extends React.Component {
         })
     }
     fetchStarships = (url) => {
-        this.state.list = []
+        this.setState({
+            list:[]
+        })
         fetch(`https://swapi.co/api/${url}/`)
         .then(response => response.json())
         .then(data => {
@@ -47,7 +64,6 @@ class InfoList extends React.Component {
             })    
         })
     }
-     
     render() {
         let InfoListStyle = {
             background:'#03a9f4',
@@ -73,8 +89,8 @@ class InfoList extends React.Component {
 
         return (    
             <div style={InfoListStyle}>
-                <PeopleBtn getPeople={() => {this.fetchPeople(people)}}/>
-                <PlanetsBtn getPlanets={() => {this.fetchPlanets(planets)}}/>
+                <PeopleBtn getPeople={() => {this.fetchStuff(people)}}/>
+                <PlanetsBtn getPlanets={() => {this.fetchStuff(planets)}}/>
                 <StarshipsBtn getStarships={() => {this.fetchStarships(starships)}}/>
                 {list}
             </div>
