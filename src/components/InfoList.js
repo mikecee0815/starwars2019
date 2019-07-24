@@ -33,7 +33,7 @@ class InfoList extends React.Component {
             background:'#03a9f4',
             padding:20,
             boxSizing:'borderBox',
-            width:'85%',
+            width:'90%',
             margin:'auto',
             boxShadow: '4px 5px 10px',
             marginTop:20,
@@ -61,7 +61,7 @@ class InfoList extends React.Component {
             margin:'auto',
         }  
         
-        let list = [] || 'test'
+        let list = [] 
         this.state.list.forEach((item) => {
             list.push( <Info item={item}/> )   
         })
@@ -75,7 +75,7 @@ class InfoList extends React.Component {
                     <StarshipsBtn getStarships={() => {this.fetchStuff(starships)}}/>
                 </div>    
                 <form style={formCSS}>
-                    <input style={{padding:10,width:'320px',fontSize:19,borderRadius:'6px'}} type='text' placeholder='live-search'></input>
+                    <input style={{padding:10,width:385,fontSize:22,borderRadius:'45px',height:65,textAlign:'center'}} type='text' placeholder='Click a button to live-search'></input>
                 </form>
                 {list}
             </div>
